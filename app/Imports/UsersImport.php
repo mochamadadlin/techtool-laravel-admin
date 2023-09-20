@@ -18,7 +18,7 @@ class UsersImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
-        $user = new User([
+        $database_do = new Customer([
             "cust_id" => $row['cust_id'],
             "bulan" => $row['bulan'],
             "buyer" => $row['buyer'],
@@ -42,9 +42,9 @@ class UsersImport implements ToModel, WithHeadingRow
             "usia_kendaraan" => $row['usia_kendaraan'],
             "usia_service" => $row['usia_service'],
             "status_service" => $row['status_service'],
-            // "status_asuransi" => 1['status_asuransi'],
-            // "nama_asuransi" => 2['nama_asuransi'],
-            // "tgl_berakhirasuransi" => 2['tgl_berakhirasuransi'],
+            "status_asuransi" => $row['status_asuransi'],
+            "nama_asuransi" => $row['nama_asuransi'],
+            "tgl_berakhirasuransi" => $row['tgl_berakhirasuransi'],
             // "role_id" => 2, // User Type User
             // "status" => 1,
             // "password" => Hash::make('password')

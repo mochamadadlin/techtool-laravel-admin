@@ -14,12 +14,9 @@
                         <!-- <i class="fas fa-plus"></i> Add New -->
                     <!-- </a> -->
                 </div>
-                <div class="col-lg-7">
                     <a href="{{ route('users.export') }}" class="btn btn-sm btn-success">
                         <i></i> Export Excel
                     </a>
-                </div>
-                
             </div>
 
         </div>
@@ -58,39 +55,50 @@
                                 <th width="15%">Usia Kendaraan</th>
                                 <th width="15%">Usia Service</th>
                                 <th width="15%">Status Service</th>
+                                <th width="15%">Status Asuransi</th>
+                                <th width="15%">Nama Asuransi</th>
+                                <th width="15%">End Date Asuransi</th>
                                 <th width="10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($database_do as $data)
+                            @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $data->cust_id }}</td>
-                                    <td>{{ $data->bulan }}</td>
-                                    <td>{{ $data->buyer}}</td>
-                                    <td>{{ $data->notelp_buyer}}</td>
-                                    <td>{{ $data->noktp_buyer}}</td>
-                                    <td>{{ $data->tgl_lahir}}</td>
-                                    <td>{{ $data->alamat}}</td>
-                                    <td>{{ $data->kecamatan}}</td>
-                                    <td>{{ $data->kota}}</td>
-                                    <td>{{ $data->noka_1}}</td>
-                                    <td>{{ $data->type}}</td>
-                                    <td>{{ $data->no_polisi}}</td>
-                                    <td>{{ $data->stnk_date}}</td>
-                                    <td>{{ $data->type_penjualan}}</td>
-                                    <td>{{ $data->sales}}</td>
-                                    <td>{{ $data->spv}}</td>
-                                    <td>{{ $data->tanggal_do}}</td>
-                                    <td>{{ $data->last_service}}</td>
-                                    <td>{{ $data->next_service}}</td>
-                                    <td>{{ $data->first_service}}</td>
-                                    <td>{{ $data->usia_kendaraan}}</td>
-                                    <td>{{ $data->usia_service}}</td>
-                                    <td>{{ $data->status_service}}</td>
-                                    <!-- <td>{{ $data->status_asuransi}}</td> -->
-                                    <!-- <td>{{ $data->nama_asuransi}}</td> -->
-                                    <!-- <td>{{ $data->tgl_berakhirasuransi}}</td> -->
+                                    <td>{{ $user->cust_id }}</td>
+                                    <td>{{ $user->bulan }}</td>
+                                    <td>{{ $user->buyer}}</td>
+                                    <td>{{ $user->notelp_buyer}}</td>
+                                    <td>{{ $user->noktp_buyer}}</td>
+                                    <td>{{ $user->tgl_lahir}}</td>
+                                    <td>{{ $user->alamat}}</td>
+                                    <td>{{ $user->kecamatan}}</td>
+                                    <td>{{ $user->kota}}</td>
+                                    <td>{{ $user->noka_1}}</td>
+                                    <td>{{ $user->type}}</td>
+                                    <td>{{ $user->no_polisi}}</td>
+                                    <td>{{ $user->stnk_date}}</td>
+                                    <td>{{ $user->type_penjualan}}</td>
+                                    <td>{{ $user->sales}}</td>
+                                    <td>{{ $user->spv}}</td>
+                                    <td>{{ $user->tanggal_do}}</td>
+                                    <td>{{ $user->usia_kendaraan}}</td>
+                                    <td>{{ $user->usia_service}}</td>
+                                    <td>{{ $user->status_service}}</td>
+                                    <td>{{ $user->status_asuransi}}</td>
+                                    <td>{{ $user->nama_asuransi}}</td>
+                                    <td>{{ $user->tgl_berakhirasuransi}}</td>
+                                    <td>
+                                    <a href="{{ route('users.edit', ['user' => $user->id]) }}"
+                                        class="btn btn-primary m-2">
+                                         <i class="fa fa-pen"></i>
+                                    </a>
+                                     <a class="btn btn-danger m-2" href="#" data-toggle="modal" data-target="#deleteModal">
+                                        <i class="fas fa-trash"></i>
+                                     </a>
+                                    </td>
+                                    
                                     <!-- <td>{{ $user->roles ? $user->roles->pluck('name')->first() : 'N/A' }}</td> -->
+
                                     <!-- <td> -->
                                         <!-- @if ($user->status == 0) -->
                                             <!-- <span class="badge badge-danger">Inactive</span> -->
@@ -110,13 +118,6 @@
                                                 <!-- <i class="fa fa-ban"></i> -->
                                             <!-- </a> -->
                                         <!-- @endif -->
-                                        <a href="{{ route('users.edit', ['user' => $user->id]) }}"
-                                            class="btn btn-primary m-2">
-                                            <i class="fa fa-pen"></i>
-                                        </a>
-                                        <a class="btn btn-danger m-2" href="#" data-toggle="modal" data-target="#deleteModal">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
