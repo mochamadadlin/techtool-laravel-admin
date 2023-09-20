@@ -6,7 +6,7 @@
 <div class="row justify-content-center">
 
     <div class="text-center mt-5">
-        <h1 class="text-white">Tech-Admin - Laravel Admin Panel</h1>
+        <h1 class="text-white">Customer Relation Management</h1>
     </div>
 
     <div class="col-xl-10 col-lg-12 col-md-9">
@@ -18,7 +18,7 @@
                     <div class="col-lg-6">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Wijaya Toyota</h1>
                             </div>
 
                             @if (session('error'))
@@ -69,7 +69,7 @@
     </div>
     
     <div class="text-center mt-5">
-        <h6 class="text-white">Developed By : <a class="text-white" href="https://techtoolindia.com">TechTool India</a></h6>
+        <h6 class="text-white">IT Head Office Wijaya Toyota</a></h6>
     </div>
 
 </div>

@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-university"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Tech-Admin</div>
+        <div class="sidebar-brand-text mx-3"> CRM | Wijaya Toyota</div>
     </a>
 
     <!-- Divider -->
@@ -19,29 +19,28 @@
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    <!-- <hr class="sidebar-divider"> -->
 
     <!-- Heading -->
-    <div class="sidebar-heading">
-        Management
-    </div>
+    <!-- <div class="sidebar-heading"> -->
+        <!-- Management -->
+    <!-- </div> -->
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#taTpDropDown"
-            aria-expanded="true" aria-controls="taTpDropDown">
-            <i class="fas fa-user-alt"></i>
-            <span>User Management</span>
-        </a>
-        <div id="taTpDropDown" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">User Management:</h6>
-                <a class="collapse-item" href="{{ route('users.index') }}">List</a>
-                <a class="collapse-item" href="{{ route('users.create') }}">Add New</a>
-                <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a>
-            </div>
-        </div>
-    </li>
+    <!-- <li class="nav-item"> -->
+        <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#taTpDropDown" -->
+            <!-- aria-expanded="true" aria-controls="taTpDropDown"> -->
+            <!-- <i class="fas fa-user-alt"></i> -->
+            <!-- <span>User Management</span> -->
+        <!-- </a> -->
+        <!-- <div id="taTpDropDown" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"> -->
+            <!-- <div class="bg-white py-2 collapse-inner rounded"> -->
+                <!-- <h6 class="collapse-header">User Management:</h6> -->
+                <!-- <a class="collapse-item" href="{{ route('users.index') }}">List</a> -->
+                <!-- <a class="collapse-item" href="{{ route('users.create') }}">Add New</a> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </li> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -49,7 +48,7 @@
     @hasrole('Admin')
         <!-- Heading -->
         <div class="sidebar-heading">
-            Admin Section
+            Database Section
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
@@ -57,13 +56,13 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                 aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Masters</span>
+                <span>Database Customer</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Role & Permissions</h6>
-                    <a class="collapse-item" href="{{ route('roles.index') }}">Roles</a>
-                    <a class="collapse-item" href="{{ route('permissions.index') }}">Permissions</a>
+                    <h6 class="collapse-header">Database Customer</h6>
+                    <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a>
+                    <a class="collapse-item" href="{{ route('users.index') }}">Data Customer</a>
                 </div>
             </div>
         </li>

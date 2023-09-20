@@ -38,8 +38,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('roles')->paginate(10);
-        return view('users.index', ['users' => $users]);
+        $database_do = User::with('roles')->paginate(10);
+        return view('users.index', ['users' => $database_do]);
     }
     
     /**
