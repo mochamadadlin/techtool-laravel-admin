@@ -68,7 +68,7 @@ class UserController extends Controller
             'first_name'    => 'required',
             'last_name'     => 'required',
             'email'         => 'required|unique:users,email',
-            'mobile_number' => 'required|numeric|digits:10',
+            'mobile_number' => 'required|numeric|digits:12',
             'role_id'       =>  'required|exists:roles,id',
             'status'       =>  'required|numeric|in:0,1',
         ]);

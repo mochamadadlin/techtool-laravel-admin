@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\DatabaseController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -52,12 +52,8 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
     Route::post('/upload-users', [UserController::class, 'uploadUsers'])->name('upload');
     Route::get('export/', [UserController::class, 'export'])->name('export');
 
-    
-    // Route::get('/import-customer', [CustomerController::class, 'importCustomer'])->name('import');
-    // Route::post('/upload-customer', [CustomerController::class, 'uploadCustomer'])->name('upload');
-    // Route::get('/data', [CustomerController::class, 'data'])->name('data');
-
-
-
 });
+
+    Route::get('/customers', 'CustomersController@index')->name('customers.index');
+    Route::post('/customers/import', 'CustomersController@import')->name('customers.import');
 

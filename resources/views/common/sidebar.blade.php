@@ -19,28 +19,29 @@
     </li>
 
     <!-- Divider -->
-    <!-- <hr class="sidebar-divider"> -->
+    <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <!-- <div class="sidebar-heading"> -->
-        <!-- Management -->
-    <!-- </div> -->
+    <div class="sidebar-heading">
+        Management
+    </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <!-- <li class="nav-item"> -->
-        <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#taTpDropDown" -->
-            <!-- aria-expanded="true" aria-controls="taTpDropDown"> -->
-            <!-- <i class="fas fa-user-alt"></i> -->
-            <!-- <span>User Management</span> -->
-        <!-- </a> -->
-        <!-- <div id="taTpDropDown" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"> -->
-            <!-- <div class="bg-white py-2 collapse-inner rounded"> -->
-                <!-- <h6 class="collapse-header">User Management:</h6> -->
-                <!-- <a class="collapse-item" href="{{ route('users.index') }}">List</a> -->
-                <!-- <a class="collapse-item" href="{{ route('users.create') }}">Add New</a> -->
-            <!-- </div> -->
-        <!-- </div> -->
-    <!-- </li> -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#taTpDropDown"
+            aria-expanded="true" aria-controls="taTpDropDown">
+            <i class="fas fa-user-alt"></i>
+            <span>User Management</span>
+        </a>
+        <div id="taTpDropDown" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">User Management:</h6>
+                <a class="collapse-item" href="{{ route('users.index') }}">List</a>
+                <a class="collapse-item" href="{{ route('users.create') }}">Add New</a>
+                <!-- <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a> -->
+            </div>
+        </div>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -56,13 +57,15 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                 aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Database Customer</span>
+                <span>Data Customer</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Database Customer</h6>
-                    <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a>
-                    <a class="collapse-item" href="{{ route('users.index') }}">Data Customer</a>
+                    <h6 class="collapse-header">Data Customer</h6>
+                    <!-- <a class="collapse-item" href="{{ route('users.import') }}">Import Data Customer</a> -->
+                    <!-- <a class="collapse-item" href="{{ route('users.import') }}">Import Data DO</a> -->
+                    <!-- <a class="collapse-item" href="{{ route('users.import') }}">Import Data SO</a> -->
+                    <a class="collapse-item" href="{{ route('customers.index') }}">Data Customer</a>
                 </div>
             </div>
         </li>

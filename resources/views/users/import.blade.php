@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Import Data Customer')
+@section('title', 'Import Data Users')
 
 @section('content')
 
@@ -8,7 +8,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Import Data Customer</h1>
+        <h1 class="h3 mb-0 text-gray-800">Import Data Users</h1>
         <a href="{{route('users.index')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-arrow-left fa-sm text-white-50"></i> Back</a>
     </div>
@@ -19,7 +19,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Import Data Customer</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Import Data Users</h6>
         </div>
         <form method="POST" action="{{route('users.upload')}}" enctype="multipart/form-data">
             @csrf
@@ -27,12 +27,12 @@
                 <div class="form-group row">
                     
                     <div class="col-md-12 mb-3 mt-3">
-                        <p>Upload Dengan Format CSV / Excel </p>
+                        <p>Upload Dengan Format CSV / Excel 
+                        </p>
+                        <a href="{{ asset('files/Format data user.xlsx') }}" target="_blank">Download Format Excel
+                        </a>
                     </div>
 
-                    <!-- <div class="col-md-12 mb-3 mt-3"> -->
-                        <!-- <p>Please Upload CSV in Given Format <a href="{{ asset('files/sample-data-sheet.csv') }}" target="_blank">Sample CSV Format</a></p> -->
-                    <!-- </div> -->
                     {{-- File Input --}}
                     <div class="col-sm-12 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;"></span>File Input</label>
