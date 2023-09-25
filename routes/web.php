@@ -47,6 +47,7 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
     Route::put('/update/{user}', [UserController::class, 'update'])->name('update');
     Route::delete('/delete/{user}', [UserController::class, 'delete'])->name('destroy');
     Route::get('/update/status/{user_id}/{status}', [UserController::class, 'updateStatus'])->name('status');
+    Route::get('/cari/{user}', [UserController::class, 'cari'])->name('cari');
 
     Route::get('/import-users', [UserController::class, 'importUsers'])->name('import');
     Route::post('/upload-users', [UserController::class, 'uploadUsers'])->name('upload');
@@ -56,4 +57,6 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
 
     Route::get('/customers', 'CustomersController@index')->name('customers.index');
     Route::post('/customers/import', 'CustomersController@import')->name('customers.import');
+    Route::get('/customers/export', 'CustomersController@export')->name('customers.export');
+    Route::post('/customers/cari','CustomersController@cari');
 
