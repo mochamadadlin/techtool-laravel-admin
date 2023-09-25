@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\CustomersImport;
+use App\Exports\CustomersExport;
 use App\Models\Customers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -28,10 +29,10 @@ class CustomersController extends Controller
         $nama_file = $file->hashName();
 
         //temporary file
-        $path = $file->storeAs('public/files/',$nama_file);
+        $path = $file->storeAs('public/file_customers/',$nama_file);
 
         // import data
-        $import = Excel::import(new CustomerImport(), storage_path('public/files/'.$nama_file));
+        $import = Excel::import(new CustomersImport, public_path('public/file_customers/'.$nama_file));
 
         //remove from server
         Storage::delete($path);
@@ -44,5 +45,23 @@ class CustomersController extends Controller
             return redirect()->route('customers.index')->with(['error' => 'Data Gagal Diimport!']);
         }
     }
-
 }
+     function export() 
+    {
+        return Excel::download(new CustomersExport, 'Format data user.xlsx');
+    }
+
+     function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+ 
+    		// mengambil data dari table customers sesuai pencarian data
+		$customers = DB::table('customers')
+		->where('cust_id','buyer','no_polisi','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data customers ke view 
+		return view('customers',['customers' => $customers]);
+ 
+	}
