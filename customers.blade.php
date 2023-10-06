@@ -25,18 +25,19 @@
             <a href="/customers/export" class="btn btn-primary btn-md">EXPORT</a>
         </div>
         <div class="col-auto">
-       <form action="/customers/cari" method="GET">
-           <input type="text" placeholder="Search" name="cari" class="form-control" value="{{ old('cari') }}"
-               aria-describedby="passwordHelpInline">
-       </form>
-   </div>
-                
+             <form action="/customers/keyword" method="GET">
+				<input type="text" name="keyword" placeholder="Search" value="{{request('keyword')}}"> 
+                <input type="submit" value="CARI">
+			</form>
+         </div>
         </div>
 
     </div>
 
         {{-- Alert Messages --}}
         @include('common.alert')
+
+        
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -52,6 +53,7 @@
                        </div>
                        <br>
                    @endif
+                   
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
@@ -60,7 +62,7 @@
                                 <th scope="col">Nama Pelanggan</th>
                                 <th scope="col">No Telp</th>
                                 <th scope="col">Cabang</th>
-                                <th scope="col">Jumlah Kendaraan</th>
+                                <!-- <th scope="col">Jumlah Kendaraan</th> -->
                                 <th scope="col">Usia Kendaraan</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -70,31 +72,31 @@
                         @foreach ($customers as $customer)
                                 <tr>
                                 <td>{{ $customer->cust_id }}</td>
-                                <td>{{ $customer->bulan }}</td>
+                                <!-- <td>{{ $customer->bulan }}</td> -->
                                 <td>{{ $customer->buyer }}</td>
                                 <td>{{ $customer->notelp_buyer }}</td>
-                                <td>{{ $customer->noktp_buyer }}</td>
-                                <td>{{ $customer->tgl_lahir }}</td>
-                                <td>{{ $customer->alamat }}</td>
-                                <td>{{ $customer->kecamatan }}</td>
-                                <td>{{ $customer->kota }}</td>
-                                <td>{{ $customer->noka_1 }}</td>
-                                <td>{{ $customer->type }}</td>
-                                <td>{{ $customer->no_polisi }}</td>
-                                <td>{{ $customer->stnk_date}}</td>
+                                <!-- <td>{{ $customer->noktp_buyer }}</td> -->
+                                <!-- <td>{{ $customer->tgl_lahir }}</td> -->
+                                <!-- <td>{{ $customer->alamat }}</td> -->
+                                <!-- <td>{{ $customer->kecamatan }}</td> -->
+                                <!-- <td>{{ $customer->kota }}</td> -->
+                                <!-- <td>{{ $customer->noka_1 }}</td> -->
+                                <!-- <td>{{ $customer->type }}</td> -->
+                                <!-- <td>{{ $customer->no_polisi }}</td> -->
+                                <!-- <td>{{ $customer->stnk_date}}</td> -->
                                 <td>{{ $customer->type_penjualan }}</td>
-                                <td>{{ $customer->sales }}</td>
-                                <td>{{ $customer->spv }}</td>
-                                <td>{{ $customer->tanggal_do }}</td>
-                                <td>{{ $customer->last_service }}</td>
-                                <td>{{ $customer->next_service }}</td>
-                                <td>{{ $customer->first_service }}</td>
+                                <!-- <td>{{ $customer->sales }}</td> -->
+                                <!-- <td>{{ $customer->spv }}</td> -->
+                                <!-- <td>{{ $customer->tanggal_do }}</td> -->
+                                <!-- <td>{{ $customer->last_service }}</td> -->
+                                <!-- <td>{{ $customer->next_service }}</td> -->
+                                <!-- <td>{{ $customer->first_service }}</td> -->
                                 <td>{{ $customer->usia_kendaraan }}</td>
-                                <td>{{ $customer->usia_service }}</td>
-                                <td>{{ $customer->status_service }}</td>
-                                <td>{{ $customer->status_asuransi }}</td>
-                                <td>{{ $customer->nama_asuransi }}</td>
-                                <td>{{ $customer->tgl_berakhirasuransi }}</td>
+                                <!-- <td>{{ $customer->usia_service }}</td> -->
+                                <!-- <td>{{ $customer->status_service }}</td> -->
+                                <!-- <td>{{ $customer->status_asuransi }}</td> -->
+                                <!-- <td>{{ $customer->nama_asuransi }}</td> -->
+                                <!-- <td>{{ $customer->tgl_berakhirasuransi }}</td> -->
                                 <td>
                                 <div class="hidden-print"> </div> 
                                     <a href="#"  data-toggle="modal" class='open_detail'>
@@ -113,6 +115,7 @@
                            @endif
                         </tbody>
                     </table>
+                    {{ $customers->links() }}
                 </div>
             </div>
         </div>
@@ -145,6 +148,13 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+   <script>
+       $(document).ready(function() {
+           $('#example').DataTable();
+       } );
+   </script>
 
 
 @endsection
