@@ -35,5 +35,12 @@ class Customers extends Model
         'nama_asuransi' ,
         'tgl_berakhirasuransi' , ];
 
-        protected $dates = ['bulan'];
-}
+        protected $casts = [
+        'bulan'                => 'date:Y-m-d',
+        'tgl_lahir'            => 'date:Y-m-d',
+        'stnk_date'            => 'datetime:Y-m-d',
+        'last_service'         => 'datetime:Y-m-d',
+        'next_service'         => 'datetime:Y-m-d',
+        'first_service'        => 'datetime:Y-m-d',
+        'tgl_berakhirasuransi' => 'datetime:Y-m-d',
+        ];}
