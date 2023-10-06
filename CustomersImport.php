@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
 
-class CustomersImport implements ToModel, WithHeadingRow
+
+class CustomersImport implements ToModel, WithHeadingRow,WithChunkReading
 {
     /**
     * @param array $row
