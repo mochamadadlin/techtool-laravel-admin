@@ -194,17 +194,17 @@ public function ExportExcel($customer_data){
         }
         $this->ExportExcel($data_array);
     }
- }
+ 
  
     function keyword(Request $request)
 	{
-        $keyword = $request->keyword;
-        $customers = Customers::where('buyer','like',"%".$keyword."%")
-        ->orWhere('cust_id','like',"%".$keyword."%")
-        ->orWhere('type_penjualan','like',"%".$keyword."%")
-        ->get();
-    		// mengirim data customers ke view 
-            return view('customers', compact('customers'));
+        if($request->has('keyword')) {
+            $customer = Customers::where('buyer','like',"%".$request->keyword."%")->get();
+        }
+        else {
+            $customer = Customers::all();
+        }
+        return view('customers',['customers']);
     }
 
-
+}
